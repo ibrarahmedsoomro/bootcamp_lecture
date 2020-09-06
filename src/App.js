@@ -6,15 +6,10 @@ import Child from './Child'
 function App() {
   return (
     
-  
-      <div>
-        <Child />   
-
-      </div>
-
-      
-  
-   
+  <div>
+    <Child />
+  </div> 
+       
   );
 }
 

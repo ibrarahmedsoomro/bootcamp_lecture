@@ -3,9 +3,9 @@ import TransactionReducer from './transReducer';
 
 
 const initialTransactions = [
-  { amount: 100, desc: "Cash" },
-  { amount: -299, desc: "pen" },
-  { amount: -29, desc: "camera" }
+  { amount: 300, desc: "Cash" },
+  { amount: -29, desc: "pencils" },
+  { amount: -99, desc: "camera" }
 
 ]
 
@@ -33,7 +33,7 @@ export const TransactionProvider = ({ children }) => {
 
     <TransactionContext.Provider value={{
 
-      transaction: state,
+      transaction : state,
       addTransaction
     }}>
       {children}

@@ -3,14 +3,20 @@ import { TransactionContext } from './transContext';
 
 function Child() {
 
-  let  transactions = useContext(TransactionContext);
-  console.log(transactions)
+  let transactions = useContext(TransactionContext);
+  //let [newDesc, setDesc] = useState("");
+  //let [newAmount, setAmount] = useState(0);
+
+  const handleAddition = (event) => {
+    event.preventDefault();
+
+   }
 
 
   return (
 
     <div className="container">
-      <h1 className="container-text">Expense Tracer</h1>
+      <h1   className="container-text">Expense Tracer</h1>
 
       <h3>Your Balance <br />$260</h3>
       <div className="expense-container">
@@ -21,8 +27,8 @@ function Child() {
       <hr />
 
       <ul className="trnsaction-list">
-        {transactions.map((transObj,     ind) => {
-          return (<li>
+        {transactions.map((transObj, ind) => {
+          return (<li key={ind}>
             <span>{transObj.desc}</span>
             <span>{transObj.amount}</span>
 
@@ -36,7 +42,7 @@ function Child() {
       <h3>Add new transactions</h3>
       <hr />
 
-      <form className="transaction-form">
+      <form className="transaction-form" onSubmit={handleAddition}>
         <label>
           Enter Description <br />
           <input type="text" required />
@@ -45,7 +51,7 @@ function Child() {
 
         <label>
           Enter Amount <br />
-          <input type="number" required />
+          <input type="number"  required />
           <br />
         </label>
 
